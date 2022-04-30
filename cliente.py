@@ -48,10 +48,3 @@ class Cliente:
     def alugar_bike(self, loja, *itens):
         loja.emprestar_bikes(self, *itens)
 
-
-valor_nome = input("Informe seu nome completo: ")
-valor_telefone = input("Informe seu telefone: ")
-valor_cpf = input("Informe seu cpf: ")
-cliente = Cliente(valor_nome, valor_telefone, valor_cpf)
-
-print(cliente)
