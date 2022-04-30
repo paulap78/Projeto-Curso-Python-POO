@@ -21,7 +21,7 @@ class Cliente:
         return self.__cpf
     def __set_cpf(self, valor_cpf):
         cpf = CPF()
-        valida = cpf.validate(valor_cpf)
+        valida = cpf.validate(f"{valor_cpf}")
         if valida == True:
             self.__cpf = valor_cpf
         else: 
@@ -42,9 +42,16 @@ class Cliente:
         loja.mostrar_bikes()
     
     def fazer_cadastro(self, valor_nome, valor_telefone, valor_cpf):
-        self.__init__(valor_nome, valor_telefone, valor_cpf)
-        self.__str__()
+        cliente = Cliente(valor_nome, valor_telefone, valor_cpf)
+        print(cliente)
 
     def alugar_bike(self, loja, *itens):
         loja.emprestar_bikes(self, *itens)
 
+
+valor_nome = input("Informe seu nome completo: ")
+valor_telefone = input("Informe seu telefone: ")
+valor_cpf = input("Informe seu cpf: ")
+cliente = Cliente(valor_nome, valor_telefone, valor_cpf)
+
+print(cliente)
